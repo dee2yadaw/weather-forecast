@@ -3,7 +3,10 @@
 async function getWeather() {
     const city = document.getElementById('city').value;
     const apiKey = '0a7d24af58153a66ac961acbe82e1cd0'; // Replace with your actual API key
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+const url = proxyUrl + apiUrl;
+
 
     try {
         const response = await fetch(url);
